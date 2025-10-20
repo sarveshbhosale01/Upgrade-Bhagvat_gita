@@ -1,0 +1,1318 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.meditation-timer-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c1534 0%, #020617 100%);
+  color: #f9e7bb;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Scrollable Container */
+.timer-scroll-container {
+  height: 100vh;
+  overflow-y: auto;
+  padding: 2rem;
+  
+  /* Hide scrollbar for all browsers */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.timer-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.timer-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.timer-header h1 {
+  font-family: 'Marcellus', serif;
+  color: #f1c40f;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.timer-header p {
+  color: #c8a858;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.timer-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Duration Selection */
+.duration-selection {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.duration-selection h3 {
+  color: #f1c40f;
+  margin-bottom: 1.5rem;
+  font-family: 'Marcellus', serif;
+  font-size: 1.5rem;
+}
+
+.duration-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.duration-btn {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  color: #f9e7bb;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.duration-btn:hover:not(:disabled) {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.duration-btn.active {
+  background: linear-gradient(135deg, #d4af37, #f1c40f);
+  color: #fffbfb;
+  border-color: #f1c40f;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.duration-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Timer Circle - FIXED VISIBILITY */
+.timer-circle-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.timer-circle {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.timer-circle-border {
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #f1c40f, #ffd700) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 8px;
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.2),
+    inset 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+.timer-circle-inner {
+  width: 100%;
+  height: 100%;
+  background: rgba(240, 236, 236, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Time Display - FIXED POSITIONING */
+.time-display {
+  text-align: center;
+  z-index: 10; /* Higher z-index to appear above progress ring */
+  position: relative;
+}
+
+.time-text {
+  display:contents;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #f1c40f;
+  font-family: 'Poppins', monospace;
+  text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  margin-bottom: 0.5rem;
+}
+
+.timer-status {
+  display: block;
+  color: #c8a858;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+
+/* Time Display Container */
+.time-display {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px; /* Fixed width for proper centering */
+  height: 300px; /* Fixed height for proper centering */
+  margin: 0 auto;
+  z-index: 10;
+}
+
+/* Main Time Text */
+.time-text {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #f1c40f;
+  font-family: 'Poppins', monospace;
+  text-shadow: 
+    0 0 15px rgba(255, 215, 0, 0.5),
+    0 0 30px rgba(255, 215, 0, 0.3);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  position: relative;
+  z-index: 12; /* Higher than progress ring */
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Timer Status */
+.timer-status {
+  color: #c8a858;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  position: relative;
+  z-index: 12;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Progress Ring - BEHIND TIME */
+.progress-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  z-index: 1;
+  width: 280px; /* Slightly smaller than container */
+  height: 280px;
+  pointer-events: none; /* Prevent interaction */
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+}
+
+/* Optional: Add animation for focus sessions */
+.time-display.focus-mode .time-text {
+  color: #ff6b6b;
+  text-shadow: 
+    0 0 15px rgba(255, 107, 107, 0.5),
+    0 0 30px rgba(255, 107, 107, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.time-display.focus-mode .timer-status {
+  color: #ff8e8e;
+  animation: statusPulse 2s infinite;
+}
+
+.time-display.break-mode .time-text {
+  color: #4ecdc4;
+  text-shadow: 
+    0 0 15px rgba(78, 205, 196, 0.5),
+    0 0 30px rgba(78, 205, 196, 0.3);
+}
+
+.time-display.break-mode .timer-status {
+  color: #6de0d8;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes statusPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .time-display {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .time-text {
+    font-size: 2.8rem;
+    padding: 8px 16px;
+  }
+  
+  .timer-status {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    padding: 6px 12px;
+  }
+  
+  .progress-ring {
+    width: 230px;
+    height: 230px;
+  }
+}
+
+@media (max-width: 480px) {
+  .time-display {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .time-text {
+    font-size: 2.2rem;
+    padding: 6px 12px;
+  }
+  
+  .timer-status {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+  }
+  
+  .progress-ring {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+/* Enhanced visual effects for completed sessions */
+.time-display.completed .time-text {
+  color: #4CAF50;
+  text-shadow: 
+    0 0 20px rgba(76, 175, 80, 0.6),
+    0 0 40px rgba(76, 175, 80, 0.4);
+  animation: celebration 1s ease-in-out;
+}
+
+.time-display.completed .timer-status {
+  color: #66bb6a;
+  animation: celebration 1s ease-in-out 0.2s;
+}
+
+@keyframes celebration {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Optional: Add gradient background for the entire time display */
+.time-display::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 320px;
+  /* background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    rgba(212, 175, 55, 0.05) 30%,
+    transparent 100%
+  ); */
+  border-radius: 50%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Ensure proper stacking context */
+.time-display > * {
+  position: relative;
+  z-index: 2;
+}
+/* Timer Controls */
+.timer-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 160px;
+  justify-content: center;
+}
+
+.start-btn {
+  background: linear-gradient(135deg, #d4af37, #f1c40f);
+  color: #1a1a1a;
+  border-color: #f1c40f;
+}
+
+.start-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.4);
+}
+
+.pause-btn {
+  background: rgba(255, 193, 7, 0.1);
+  color: #ffc107;
+  border-color: rgba(255, 193, 7, 0.5);
+}
+
+.pause-btn:hover {
+  background: rgba(255, 193, 7, 0.2);
+  transform: translateY(-2px);
+}
+
+.stop-btn {
+  background: rgba(244, 67, 54, 0.1);
+  color: #f44336;
+  border-color: rgba(244, 67, 54, 0.5);
+}
+
+.stop-btn:hover {
+  background: rgba(244, 67, 54, 0.2);
+  transform: translateY(-2px);
+}
+
+.reset-btn {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f9e7bb;
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.reset-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+}
+
+/* Enhanced Meditation Tips Section */
+.meditation-tips-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.tips-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tips-header h3 {
+  color: #f1c40f;
+  font-family: 'Marcellus', serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.tips-header p {
+  color: #c8a858;
+  font-size: 1.1rem;
+}
+
+.tips-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.tip-card {
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 175, 55, 0.4);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.1);
+}
+
+.tip-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.tip-card h4 {
+  color: #f1c40f;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-family: 'Marcellus', serif;
+}
+
+.tip-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tip-card li {
+  color: #f9e7bb;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.tip-card li:before {
+  content: '•';
+  color: #f1c40f;
+  position: absolute;
+  left: 0;
+}
+
+.tip-card li:last-child {
+  border-bottom: none;
+}
+
+/* Benefits Section */
+.benefits-section {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.benefits-section h3 {
+  color: #f1c40f;
+  font-family: 'Marcellus', serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  background: rgba(212, 175, 55, 0.05);
+  border-radius: 1rem;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  transition: all 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-3px);
+  border-color: rgba(212, 175, 55, 0.3);
+}
+
+.benefit-icon {
+  font-size: 2rem;
+}
+
+.benefit-item span:last-child {
+  color: #f9e7bb;
+  font-weight: 500;
+}
+
+/* Completion Modal */
+.completion-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.completion-content {
+  background: linear-gradient(135deg, #0c1534, #020617);
+  border: 2px solid #f1c40f;
+  border-radius: 2rem;
+  padding: 3rem;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+}
+
+.completion-icon {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+.completion-content h2 {
+  color: #f1c40f;
+  font-family: 'Marcellus', serif;
+  margin-bottom: 1rem;
+  font-size: 2.5rem;
+}
+
+.completion-content p {
+  color: #f9e7bb;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.completion-quote {
+  font-style: italic;
+  color: #c8a858 !important;
+  font-size: 1.1rem;
+}
+
+.completion-quote span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+/* Enhanced Sound Waves Animation */
+.sound-waves {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  z-index: 100;
+}
+
+.wave {
+  width: 8px;
+  height: 30px;
+  background: linear-gradient(180deg, #d4af37, #f1c40f);
+  border-radius: 4px;
+  animation: wave 1.5s ease-in-out infinite;
+}
+
+.wave:nth-child(2) { animation-delay: 0.2s; }
+.wave:nth-child(3) { animation-delay: 0.4s; }
+.wave:nth-child(4) { animation-delay: 0.6s; }
+
+.sound-label {
+  color: #f1c40f;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(2);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timer-scroll-container {
+    padding: 1rem;
+  }
+  
+  .timer-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .timer-circle {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .time-text {
+    font-size: 3rem;
+  }
+  
+  .duration-buttons {
+    gap: 0.5rem;
+  }
+  
+  .duration-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .control-btn {
+    min-width: 140px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .tips-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .completion-content {
+    margin: 1rem;
+    padding: 2rem;
+  }
+  
+  .sound-waves {
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-circle {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .time-text {
+    font-size: 2.5rem;
+  }
+  
+  .timer-controls {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .control-btn {
+    width: 200px;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .sound-waves {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+/* ✅ FIX — Ensure timer text appears above progress ring */
+.timer-circle-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg);
+  z-index: 0; /* keep behind */
+}
+
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2; /* bring above everything */
+  text-align: center;
+}
+/* Timer Circle Container */
+.timer-circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.timer-circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Progress Ring - BEHIND EVERYTHING */
+.progress-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  z-index: 1; /* Behind the timer */
+}
+
+.progress-ring-circle {
+  transition: stroke-dashoffset 0.3s ease;
+  filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.3));
+}
+
+/* Timer Border - MIDDLE LAYER */
+.timer-circle-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d4af37, #f1c40f, #ffd700) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 8px;
+  box-shadow: 
+    0 0 30px rgba(255, 215, 0, 0.2),
+    inset 0 0 20px rgba(255, 215, 0, 0.1);
+  z-index: 2;
+}
+
+.timer-circle-inner {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  background: rgba(12, 21, 52, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+/* Time Display - ON TOP OF EVERYTHING */
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10; /* Highest z-index */
+  width: 100%;
+}
+
+.time-text {
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #f1c40f;
+  font-family: 'Poppins', monospace;
+  text-shadow: 
+    0 0 15px rgba(255, 215, 0, 0.5),
+    0 0 30px rgba(255, 215, 0, 0.3);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  display: block;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  min-width: 200px;
+}
+
+.timer-status {
+  color: #c8a858;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .timer-circle-container {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .progress-ring {
+    width: 280px;
+    height: 280px;
+  }
+  
+  .time-text {
+    font-size: 3rem;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .timer-circle-container {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .progress-ring {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .time-text {
+    font-size: 2.5rem;
+    padding: 10px 16px;
+  }
+}
+/* Add these styles to your meditation.css file */
+
+/* Numerical Timer Container */
+.numerical-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.time-text {
+  font-size: 4rem; /* Increased size for better visibility */
+  font-weight: 300;
+  color: #f1c40f;
+  font-family: 'Poppins', monospace;
+  text-shadow: 
+    0 0 20px rgba(255, 215, 0, 0.7),
+    0 0 40px rgba(255, 215, 0, 0.4),
+    0 0 60px rgba(255, 215, 0, 0.2);
+  margin-bottom: 0.5rem;
+  line-height: 1;
+  display: block;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 25px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  min-width: 220px;
+  text-align: center;
+  animation: gentlePulse 2s ease-in-out infinite;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 
+      0 0 20px rgba(255, 215, 0, 0.7),
+      0 0 40px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.02);
+    text-shadow: 
+      0 0 25px rgba(255, 215, 0, 0.8),
+      0 0 50px rgba(255, 215, 0, 0.5);
+  }
+}
+
+.timer-status {
+  color: #c8a858;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 10px 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  display: inline-block;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Enhanced states for active meditation */
+.time-display.meditating .time-text {
+  color: #4ecdc4;
+  text-shadow: 
+    0 0 20px rgba(78, 205, 196, 0.7),
+    0 0 40px rgba(78, 205, 196, 0.4);
+  animation: activePulse 1.5s ease-in-out infinite;
+}
+
+.time-display.meditating .timer-status {
+  color: #6de0d8;
+  background: rgba(78, 205, 196, 0.1);
+  border-color: rgba(78, 205, 196, 0.4);
+}
+
+@keyframes activePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+/* Paused state */
+.time-display.paused .time-text {
+  color: #ffc107;
+  text-shadow: 
+    0 0 20px rgba(255, 193, 7, 0.7),
+    0 0 40px rgba(255, 193, 7, 0.4);
+  animation: pausedPulse 3s ease-in-out infinite;
+}
+
+.time-display.paused .timer-status {
+  color: #ffd54f;
+  background: rgba(255, 193, 7, 0.1);
+  border-color: rgba(255, 193, 7, 0.4);
+}
+
+@keyframes pausedPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Completion state */
+.time-display.completed .time-text {
+  color: #4CAF50;
+  text-shadow: 
+    0 0 25px rgba(76, 175, 80, 0.8),
+    0 0 50px rgba(76, 175, 80, 0.5);
+  animation: celebration 2s ease-in-out;
+}
+
+.time-display.completed .timer-status {
+  color: #66bb6a;
+  background: rgba(76, 175, 80, 0.1);
+  border-color: rgba(76, 175, 80, 0.4);
+}
+
+@keyframes celebration {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  75% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design for Numerical Timer */
+@media (max-width: 768px) {
+  .time-text {
+    font-size: 3.2rem;
+    padding: 15px 25px;
+    min-width: 180px;
+  }
+  
+  .timer-status {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .time-text {
+    font-size: 2.8rem;
+    padding: 12px 20px;
+    min-width: 160px;
+  }
+  
+  .timer-status {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    letter-spacing: 2px;
+  }
+}
+
+/* Update the time-display class to include state management */
+.time-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 10;
+  width: 100%;
+}
+
+/* Add dynamic classes based on timer state */
+.time-display.ready .time-text {
+  color: #f1c40f;
+}
+
+.time-display.meditating .time-text {
+  color: #4ecdc4;
+}
+
+.time-display.paused .time-text {
+  color: #ffc107;
+}
+
+.time-display.completed .time-text {
+  color: #4CAF50;
+}
+/* Music Selection Styles */
+.music-selection {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.music-selection h3 {
+  color: #f1c40f;
+  margin-bottom: 1.5rem;
+  font-family: 'Marcellus', serif;
+  font-size: 1.5rem;
+}
+
+.music-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.music-option {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(212, 175, 55, 0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  backdrop-filter: blur(10px);
+}
+
+.music-option:hover:not(.disabled) {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.music-option.active {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #f1c40f;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.2);
+}
+
+.music-option.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.music-icon {
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+  border: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.music-option.active .music-icon {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #f1c40f;
+}
+
+.music-info {
+  flex: 1;
+  text-align: left;
+}
+
+.music-info h4 {
+  color: #f1c40f;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.music-info p {
+  color: #c8a858;
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.music-selected-indicator {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f1c40f;
+  color: #1a1a1a;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* Current Music Display */
+.current-music-display {
+  text-align: center;
+  margin: 1rem 0 2rem 0;
+  animation: fadeIn 0.5s ease-in;
+}
+
+.current-music-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(212, 175, 55, 0.1);
+  padding: 0.75rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.current-music-info .music-icon {
+  font-size: 1.5rem;
+  width: 35px;
+  height: 35px;
+}
+
+.music-name {
+  color: #f1c40f;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .music-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .music-option {
+    padding: 1rem;
+  }
+  
+  .music-icon {
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .current-music-info {
+    padding: 0.5rem 1rem;
+  }
+  
+  .music-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .music-selection h3 {
+    font-size: 1.3rem;
+  }
+  
+  .music-info h4 {
+    font-size: 1rem;
+  }
+  
+  .music-info p {
+    font-size: 0.8rem;
+  }
+}

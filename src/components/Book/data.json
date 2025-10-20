@@ -1,0 +1,391 @@
+{
+  "bhagavadGita": {
+    "metadata": {
+      "title": "Bhagavad Gita",
+      "author": "Vyasa",
+      "language": "Sanskrit",
+      "chapters": 18,
+      "verses": 700,
+      "partOf": "Mahabharata"
+    },
+    "chapters": [
+      {
+        "id": 1,
+        "name": "Arjuna Vishada Yoga",
+        "translation": "The Yoga of Arjuna's Dejection",
+        "verseCount": 47,
+        "summary": "Arjuna is overwhelmed with moral doubt and sorrow on the battlefield, unwilling to fight his kin. This chapter sets the emotional stage for Krishna's teaching.",
+        "keyConcepts": [
+          "Dharma Sankata",
+          "Moral Conflict",
+          "Duty vs Emotion"
+        ],
+        "verses": [
+          {
+            "verse": 1,
+            "sanskrit": "धृतराष्ट्र उवाच | धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः | मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ||",
+            "translation": "Dhritarashtra said: O Sanjaya, what did my sons and the sons of Pandu do when they had assembled together, eager for battle, on the holy field of Kurukshetra?",
+            "meaning": "The blind king asks Sanjaya to describe the battlefield events; sets the scene for Arjuna's anguish."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Sankhya Yoga",
+        "translation": "The Yoga of Knowledge",
+        "verseCount": 72,
+        "summary": "Krishna explains the eternal nature of the soul and introduces Karma Yoga: perform duty without attachment to outcomes.",
+        "keyConcepts": [
+          "Atman (Soul)",
+          "Karma Yoga",
+          "Sthitaprajna"
+        ],
+        "verses": [
+          {
+            "verse": 47,
+            "sanskrit": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन | मा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि ||",
+            "translation": "You have the right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+            "meaning": "Do your duty without attachment to results — focus on action, not on reward."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Karma Yoga",
+        "translation": "The Yoga of Action",
+        "verseCount": 43,
+        "summary": "Detailed guidance on selfless action: act according to duty with no attachment; action performed as sacrifice purifies and advances the seeker.",
+        "keyConcepts": [
+          "Selfless Action",
+          "Duty (Svadharma)"
+        ],
+        "verses": [
+          {
+            "verse": 19,
+            "sanskrit": "तस्मादसक्ति: सततं कार्यं कर्म समाचर | असक्तो ह्याचरन्कर्म परमाप्नोति पूरुषः ||",
+            "translation": "Therefore, perform your duty constantly, without attachment. By performing action without attachment one attains the Supreme.",
+            "meaning": "Consistent duty, done without attachment, leads to spiritual attainment."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Jnana Karma Sanyasa Yoga",
+        "translation": "The Yoga of Knowledge, Action and Renunciation",
+        "verseCount": 42,
+        "summary": "Krishna explains the relation of knowledge and action, the role of wise renunciation, and how divine knowledge is transmitted.",
+        "keyConcepts": [
+          "Transcendental Knowledge",
+          "Action + Wisdom"
+        ],
+        "verses": [
+          {
+            "verse": 7,
+            "sanskrit": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत | अभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम् ||",
+            "translation": "Whenever there is a decline in righteousness and an increase of unrighteousness, O Bharata, then I manifest Myself.",
+            "meaning": "Divine incarnation occurs to restore dharma when it declines."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Karma Sanyasa Yoga",
+        "translation": "The Yoga of Renunciation of Action",
+        "verseCount": 29,
+        "summary": "Contrast between renunciation and renounced action; the chapter teaches that selfless action with wisdom equals true renunciation.",
+        "keyConcepts": [
+          "Renunciation vs Action",
+          "Detached Work"
+        ],
+        "verses": [
+          {
+            "verse": 10,
+            "sanskrit": "ब्रह्मणो हूतं कर्म सर्वमित्यवधिक्रमः | ब्रह्मार्पणं ब्रह्म ह्मेव ब्रह्मणा हुतं ब्रह्मणा ||",
+            "translation": "The offerings are Brahman, the oblation is Brahman, Brahman is offered by Brahman into the fire of Brahman.",
+            "meaning": "When one sees the Divine in all actions and offerings, action becomes a spiritual offering."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Dhyana Yoga",
+        "translation": "The Yoga of Meditation",
+        "verseCount": 47,
+        "summary": "Instructions for meditation and mind control; how to establish an even-minded, steady spiritual practice leading to self-realization.",
+        "keyConcepts": [
+          "Meditation",
+          "Mind Control",
+          "Samadhi"
+        ],
+        "verses": [
+          {
+            "verse": 5,
+            "sanskrit": "उद्धरेदात्मनाऽत्मानं नात्मानमवसादयेत् | आत्मैव ह्यात्मनो बन्धुरात्मैव रिपुरात्मनः ||",
+            "translation": "One should lift oneself by the self alone; one should not degrade oneself. The self alone is the friend of the self, and the self alone is the enemy of the self.",
+            "meaning": "Self-mastery is achieved by disciplined practice; the self is both helper and foe depending on discipline."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Jnana Vijnana Yoga",
+        "translation": "The Yoga of Knowledge and Wisdom",
+        "verseCount": 30,
+        "summary": "Krishna explains His immanence and transcendence — how to know God through devotion and knowledge; understanding the divine nature in the world.",
+        "keyConcepts": [
+          "Divine Knowledge",
+          "Immanence"
+        ],
+        "verses": [
+          {
+            "verse": 7,
+            "sanskrit": "मत्तः परतरं नान्यत् किञ्चिदस्ति धनञ्जय | मयि सर्वमिदं प्रोतं सूत्रे मणिगणा इव ||",
+            "translation": "O Dhananjaya, there is nothing higher than Me. Everything rests in Me, as pearls are strung on a thread.",
+            "meaning": "All that exists is pervaded by the Divine; Krishna is the ultimate substratum of everything."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Akshara Brahma Yoga",
+        "translation": "The Yoga of the Imperishable Absolute",
+        "verseCount": 28,
+        "summary": "Teachings about the eternal (akshara), the nature of death, and how remembrance at the time of death determines one’s next state.",
+        "keyConcepts": [
+          "Imperishable (Akshara)",
+          "Death and Afterlife"
+        ],
+        "verses": [
+          {
+            "verse": 5,
+            "sanskrit": "अन्तकाले च मामेव स्मरन्मुक्त्वा कलेवरम् | यः प्रयाति स मद्भावं याति नास्त्यत्र संशयः ||",
+            "translation": "Whoever, at the end, remembers Me, and leaves the body remembering Me, attains My being — of this there is no doubt.",
+            "meaning": "A consciousness fixed on the Divine at death leads to union with the Divine."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Raja Vidya Raja Guhya Yoga",
+        "translation": "The Yoga of Sovereign Knowledge and Sovereign Secret",
+        "verseCount": 34,
+        "summary": "Reveals the most confidential knowledge: the intimate relationship between the Divine and the devoted soul; grace and accessibility of God to sincere devotees.",
+        "keyConcepts": [
+          "Divine Secret",
+          "Devotional Grace"
+        ],
+        "verses": [
+          {
+            "verse": 22,
+            "sanskrit": "अनन्याश्चिन्तयन्तो मां ये जनाः पर्युपासते | तेषां नित्याभियुक्तानां योगक्षेमं वहाम्यहम् ||",
+            "translation": "To those who are constantly devoted and who worship Me with love, I give the understanding by which they can come to Me. I carry what they lack and preserve what they have.",
+            "meaning": "God protects and guides the surrendered devotee; devotion opens the way to divine care."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Vibhuti Yoga",
+        "translation": "The Yoga of Divine Manifestations",
+        "verseCount": 42,
+        "summary": "Krishna describes His opulent manifestations (vibhutis) in the world — divine attributes present in creation that point back to the source.",
+        "keyConcepts": [
+          "Divine Manifestations",
+          "Recognition of God in Creation"
+        ],
+        "verses": [
+          {
+            "verse": 8,
+            "sanskrit": "अहं सर्वस्य प्रभवो मत्तः सर्वं प्रवर्तते | इति मत्वा भजन्ते मां बुधा भावसमाजमुखाः ||",
+            "translation": "I am the origin of all; everything proceeds from Me. Those who understand this worship Me with single-minded devotion.",
+            "meaning": "Understanding the Divine as the source of all creation inspires devoted worship."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "name": "Vishvarupa Darshana Yoga",
+        "translation": "The Yoga of the Vision of the Universal Form",
+        "verseCount": 55,
+        "summary": "Krishna grants Arjuna divine vision to behold His universal form — an overwhelming, awe-inspiring revelation of cosmic totality and power.",
+        "keyConcepts": [
+          "Cosmic Vision",
+          "Divine Majesty"
+        ],
+        "verses": [
+          {
+            "verse": 32,
+            "sanskrit": "काले वारं मोहयन्तं लोकान् समार्गितुमिहैतः | श्रेयो हि अन्विच्छन्ति येऽभ्युदयाय सपत्नकाः ||",
+            "translation": "I am Time, the mighty destroyer of the worlds; I have come here to engage all people. With the exception of you [the Pandavas], all present here shall be slain.",
+            "meaning": "Krishna reveals His form as Time and the supreme force that governs the cosmic order; the vision shows inevitability of destiny."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "name": "Bhakti Yoga",
+        "translation": "The Yoga of Devotion",
+        "verseCount": 20,
+        "summary": "Describes devotional practices and the qualities of those dear to God — simple, loving devotion is a direct path to the Divine.",
+        "keyConcepts": [
+          "Devotion (Bhakti)",
+          "Qualities of the Devotee"
+        ],
+        "verses": [
+          {
+            "verse": 13,
+            "sanskrit": "त्रैगुण्यविषया वेदा निस्त्रैगुण्यो भव प्रद्युम्न | बाधं न कर्तव्यं विद्वान् भक्त्या यः सम्यगुपासते ||",
+            "translation": "The transcendentalists who are beyond the three modes of material nature, who are free from dualities, who are equipoised in both success and failure — they are very, very rare.",
+            "meaning": "Those who truly realize the Divine are beyond the three gunas and maintain evenness of mind; such devotion is rare."
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "name": "Kshetra Kshetrajna Vibhaga Yoga",
+        "translation": "The Yoga of Distinction Between Field and Knower of the Field",
+        "verseCount": 35,
+        "summary": "Explains the difference between the body/empirical world (kshetra) and the witnessing Self (kshetrajna); introduces knowledge as liberation.",
+        "keyConcepts": [
+          "Field vs Knower",
+          "Self-Knowledge"
+        ],
+        "verses": [
+          {
+            "verse": 2,
+            "sanskrit": "इदं शरीरं कौन्तेय क्षेत्रमित्यभिधीयते | एतद्यो वेत्ति तं प्राहु: क्षेत्रज्ञ इति तत्र ||",
+            "translation": "This body, O Kaunteya, is called the field. He who knows it is called the knower of the field.",
+            "meaning": "Differentiating the physical body/mind from the eternal knower is fundamental to self-realization."
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "name": "Gunatraya Vibhaga Yoga",
+        "translation": "The Yoga of the Division of the Three Gunas",
+        "verseCount": 27,
+        "summary": "Describes the three gunas — sattva, rajas, tamas — how they bind the soul, and how transcendence leads to liberation.",
+        "keyConcepts": [
+          "Sattva, Rajas, Tamas",
+          "Transcending the Gunas"
+        ],
+        "verses": [
+          {
+            "verse": 22,
+            "sanskrit": "सत्त्वानुरुपा सर्वस्य श्रद्धा भवति भारत | श्रद्धा न्यासेऽस्मिन्प्राप्ते सिद्धिर्बहुधा भयावहा ||",
+            "translation": "O Bharat, for all beings the faith is in accordance with their own nature; when faith is placed in that faith, many kinds of perfection occur and fear is removed.",
+            "meaning": "One's faith follows their nature (guna); acting in line with sattvic faith brings steadiness and removes fear."
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "name": "Purushottama Yoga",
+        "translation": "The Yoga of the Supreme Person",
+        "verseCount": 20,
+        "summary": "Metaphor of the cosmic tree and the distinction between the perishable and the imperishable; describes the supreme person (Purushottama) as the ultimate goal.",
+        "keyConcepts": [
+          "Cosmic Tree",
+          "Supreme Person"
+        ],
+        "verses": [
+          {
+            "verse": 15,
+            "sanskrit": "एषा ब्राह्मिणी स्थितिः पुण्यो ब्राह्मणः परशुचिः | आत्मा सन्तोऽणिमान्त मत्येवश्च निवृत्तिः ||",
+            "translation": "The Supreme Person pervades all; He is both the imperishable and perishable. Realizing the Supreme beyond the cosmic tree liberates one.",
+            "meaning": "Transcending the temporary world and realizing the Supreme liberates the soul."
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "name": "Daivasura Sampad Vibhaga Yoga",
+        "translation": "The Yoga of the Division between Divine and Demoniac Properties",
+        "verseCount": 24,
+        "summary": "Contrasts divine (daiva) and demoniac (asura) qualities and their consequences; encourages cultivating divine attributes.",
+        "keyConcepts": [
+          "Ethical Qualities",
+          "Consequences of Character"
+        ],
+        "verses": [
+          {
+            "verse": 24,
+            "sanskrit": "मामेवैष्यसि नान्यत्कर्तुं तस्य कर्तारमवस्थितः | जन्म कर्म च मे दिव्यानि लोके जन्मा प्रतिष्ठिताः ||",
+            "translation": "Those who take shelter in Me alone, thinking of no other, will know the real purpose of life; all divine births and acts return to Me.",
+            "meaning": "Surrender and devotion to the Divine align life with its highest purpose."
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "name": "Sraddhatraya Vibhaga Yoga",
+        "translation": "The Yoga of the Division of the Threefold Faith",
+        "verseCount": 28,
+        "summary": "Explains how faith (sraddha) arises from the three gunas; outlines how beliefs and worship differ by one’s nature.",
+        "keyConcepts": [
+          "Faith and Nature",
+          "Worship Patterns"
+        ],
+        "verses": [
+          {
+            "verse": 3,
+            "sanskrit": "त्रैगुण्यविषया वेदा निस्त्रैगुण्यं पुरुषोऽश्नुति | नप्तुं वावार्ड्ध्यं योगो नित्यं श्रद्दधा यः सः ||",
+            "translation": "The Vedas deal with the three modes of material nature; one who takes pleasure in them, bound by the three gunas, cannot reach the supreme.",
+            "meaning": "Faith and practice shaped by the gunas keep one bound; transcendence requires rising beyond these modes."
+          }
+        ]
+      },
+      {
+        "id": 18,
+        "name": "Moksha Sannyasa Yoga",
+        "translation": "The Yoga of Liberation and Renunciation",
+        "verseCount": 78,
+        "summary": "Final synthesis of teachings: duties, devotion, renunciation, and paths to liberation. Krishna summarizes practical guidance to achieve moksha.",
+        "keyConcepts": [
+          "Renunciation",
+          "Liberation (Moksha)",
+          "Integration of Paths"
+        ],
+        "verses": [
+          {
+            "verse": 66,
+            "sanskrit": "सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज | अहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः ||",
+            "translation": "Abandon all varieties of dharma and simply surrender unto Me alone. I will liberate you from all sinful reactions; do not fear.",
+            "meaning": "Complete surrender to the Divine is the highest teaching and guarantees liberation from bondage."
+          }
+        ]
+      }
+    ],
+    "keyTeachings": {
+      "yogas": [
+        {
+          "name": "Karma Yoga",
+          "description": "The path of selfless action",
+          "chapter": 3
+        },
+        {
+          "name": "Bhakti Yoga",
+          "description": "The path of devotion",
+          "chapter": 12
+        },
+        {
+          "name": "Jnana Yoga",
+          "description": "The path of knowledge",
+          "chapter": 4
+        },
+        {
+          "name": "Dhyana Yoga",
+          "description": "The path of meditation",
+          "chapter": 6
+        }
+      ],
+      "coreConcepts": [
+        "Dharma (Righteous Duty)",
+        "Atman (Eternal Soul)",
+        "Brahman (Supreme Reality)",
+        "Maya (Illusion)",
+        "Moksha (Liberation)"
+      ]
+    }
+  }
+}

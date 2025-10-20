@@ -1,0 +1,38 @@
+{
+  "feedbackSubmissions": [
+    {
+      "id": "feedback_123456",
+      "userInfo": {
+        "name": "John Doe",
+        "email": "john@example.com"
+      },
+      "feedbackData": {
+        "category": "feature",
+        "subject": "Need audio feature",
+        "message": "Please add audio recitations for verses...",
+        "ratings": {
+          "contentAccuracy": 5,
+          "userInterface": 4,
+          "easeOfUse": 5,
+          "featureSet": 3,
+          "overallExperience": 4
+        },
+        "featureRequests": ["Audio Recitations", "Bookmark Verses"],
+        "allowFollowUp": true
+      },
+      "metadata": {
+        "submittedAt": "2024-01-15T10:30:00Z",
+        "status": "new", 
+        "priority": "medium", 
+        "assignedTo": null,
+        "read": false,
+        "followUpSent": false
+      },
+      "adminActions": {
+        "notes": [],
+        "tags": ["audio", "feature-request"],
+        "estimatedTimeline": null
+      }
+    }
+  ]
+}

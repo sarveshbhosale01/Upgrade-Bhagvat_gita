@@ -1,0 +1,43 @@
+{
+  "chatInterface": {
+    "metadata": {
+      "name": "Gita Guide Chat",
+      "description": "AI-powered assistant for Bhagavad Gita insights",
+      "version": "1.0"
+    },
+    "predefinedQuestions": [
+      {
+        "id": 1,
+        "question": "What is the main message of Bhagavad Gita?",
+        "category": "general"
+      },
+      {
+        "id": 2,
+        "question": "Explain the concept of Karma Yoga",
+        "category": "teachings"
+      },
+      {
+        "id": 3,
+        "question": "What does Lord Krishna say about dealing with stress?",
+        "category": "practical"
+      },
+      {
+        "id": 4,
+        "question": "How to practice Bhakti Yoga in daily life?",
+        "category": "practice"
+      },
+      {
+        "id": 5,
+        "question": "What is the significance of Chapter 2?",
+        "category": "chapters"
+      }
+    ],
+    "quickReplies": [
+      "Tell me about Dharma",
+      "What is Atman?",
+      "How to control mind?",
+      "Explain detachment",
+      "Purpose of life according to Gita"
+    ]
+  }
+}

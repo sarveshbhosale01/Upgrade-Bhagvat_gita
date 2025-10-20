@@ -1,0 +1,51 @@
+{
+  "contactPage": {
+    "metadata": {
+      "title": "Contact & Feedback",
+      "description": "Share your thoughts and help us improve the Gita experience"
+    },
+    "contactInfo": {
+      "email": "gita-guide@example.com",
+      "website": "www.gitaguide.com",
+      "supportHours": "9:00 AM - 6:00 PM IST",
+      "responseTime": "Within 24 hours"
+    },
+    "feedbackCategories": [
+      {
+        "id": "general",
+        "name": "General Feedback",
+        "description": "Overall experience and suggestions"
+      },
+      {
+        "id": "content",
+        "name": "Content Related",
+        "description": "About Gita verses, translations, explanations"
+      },
+      {
+        "id": "technical",
+        "name": "Technical Issue",
+        "description": "Bugs, errors, or performance problems"
+      },
+      {
+        "id": "feature",
+        "name": "Feature Request",
+        "description": "Suggest new features or improvements"
+      },
+      {
+        "id": "uiux",
+        "name": "UI/UX Feedback",
+        "description": "Design and user experience suggestions"
+      }
+    ],
+    "ratings": {
+      "categories": [
+        "Content Accuracy",
+        "User Interface",
+        "Ease of Use",
+        "Feature Set",
+        "Overall Experience"
+      ],
+      "scale": 5
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&family=Poppins:wght@300;400;500;600&display=swap");
+
+.intro-container {
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #0c1534, #020617 80%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9e7bb;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Golden frame with glow */
+.intro-frame {
+  border: 3px solid #d4af37;
+  border-radius: 1.5rem;
+  padding: 3rem;
+  max-width: 850px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.2),
+    inset 0 0 15px rgba(255, 215, 0, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(5px);
+}
+
+/* Title styling */
+.intro-title {
+  font-family: "Marcellus", serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  color: #f1c40f;
+  text-shadow: 0 0 10px rgba(255, 217, 0, 0.7),
+    0 0 20px rgba(255, 217, 0, 0.3);
+}
+
+.intro-subtitle {
+  font-size: 1.1rem;
+  color: #ffe6a7;
+  font-style: italic;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Paragraphs */
+.intro-text {
+  color: #f5deb3;
+  font-size: 0.95rem;
+  line-height: 1.7rem;
+  margin: 1rem 0;
+  opacity: 0.95;
+}
+
+.highlight {
+  color: #f1c40f;
+  font-weight: 600;
+}
+
+/* Button */
+.intro-btn {
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(90deg, #d4af37, #f1c40f);
+  border: none;
+  border-radius: 2rem;
+  color: #1a1a1a;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+}
+
+.intro-btn:hover {
+  background: linear-gradient(90deg, #f1c40f, #ffd700);
+  transform: translateY(-2px);
+}
+
+/* Background decorations */
+.chakra-symbol {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.08), transparent 70%);
+  border-radius: 50%;
+  top: 10%;
+  right: 10%;
+  filter: blur(50px);
+  animation: rotate 40s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.intro-footer {
+  position: absolute;
+  bottom: 15px;
+  font-size: 0.75rem;
+  color: #c8a858;
+  letter-spacing: 0.5px;
+}
